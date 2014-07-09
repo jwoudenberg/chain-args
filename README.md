@@ -6,7 +6,7 @@ setOptions({
     color: 'blue',
     amount: 8
     loud: true
-})
+});
 ```
 
 And change it to a function you can call like this:
