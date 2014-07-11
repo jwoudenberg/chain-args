@@ -46,3 +46,20 @@ var total = sum()
                 .end();
 
 console.log(total);     //6
+
+
+//Example 4
+var query = chainArgs()
+                .property('from')
+                .args('where')
+                .callback(function(result) {
+                    var query = [
+                        'FROM ' + result.from,
+                        'WHERE ' + result.where.join(' ')
+                    ].join('\n');
+                    console.log(query);
+                });
+
+query()
+    .from('foo')
+    .where('something', 'is', 'selected');  //<query>
