@@ -5,7 +5,7 @@ var fullName = chainArgs()
                 .property('first')
                 .property('last')
                 .resolver('end')
-                .callback(function(result) {
+                .callback(function(err, result) {
                     return result.first + ' ' + result.last;
                 });
 
@@ -21,7 +21,7 @@ console.log(myName);    //Jasper Woudenberg
 var div = chainArgs()
             .property('numerator')
             .property('denominator')
-            .callback(function(result) {
+            .callback(function(err, result) {
                 console.log(result.numerator / result.denominator);
             });
 
@@ -34,7 +34,7 @@ div()
 var sum = chainArgs()
             .array('number')
             .resolver('end')
-            .callback(function(result) {
+            .callback(function(err, result) {
                 return result.number.reduce(function(acc, value) {
                     return acc + value;
                 }, 0);
@@ -52,7 +52,7 @@ console.log(total);     //6
 var query = chainArgs()
                 .property('from')
                 .args('where')
-                .callback(function(result) {
+                .callback(function(err, result) {
                     var query = [
                         'FROM ' + result.from,
                         'WHERE ' + result.where.join(' ')
