@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/jwoudenberg/chain-args/issues"
   },
-  "homepage": "https://github.com/jwoudenberg/chain-args"
+  "homepage": "https://github.com/jwoudenberg/chain-args",
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "gulp-mocha": "~0.5.0",
+    "gulp": "~3.8.6"
+  }
 }
